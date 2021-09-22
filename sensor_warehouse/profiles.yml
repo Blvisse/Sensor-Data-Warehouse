@@ -1,0 +1,45 @@
+dbt_sqlite:
+
+  target: dev
+  outputs:
+    dev:
+      type: sqlite
+
+      # sqlite locks the whole db on writes so anything > 1 won't help
+      threads: 1
+
+      # value is arbitrary
+      database: "database"
+
+      # value of 'schema' must be defined in schema_paths below. in most cases,
+      # this should be 'main'
+      schema: 'main'
+
+      # connect schemas to paths: at least one of these must be 'main'
+      schemas_and_paths:
+        main: '/my_project/data/etl.db'
+        dataset: '/my_project/data/dataset_v1.db'
+
+      # directory where all *.db files are attached as schema, using base filename
+      # as schema name, and where new schema are created. this can overlap with the dirs of
+      # files in schemas_and_paths as long as there's no conflicts.
+      schema_directory: '/my_project/data'
+
+      # optional: list of file paths of SQLite extensions to load.
+      # crypto.so is needed for snapshots to work; see README
+      extensions:
+        - "/path/to/sqlean/crypto.so"
+
+mysql_db: 
+  target: dev 
+  outputs:
+    dev: 
+      type: mysql
+      server: localhost 
+      port: 3306 
+      schema: sensor_datawarehouse 
+      username: root 
+      password: root
+      database: "sensor_datawarehouse"
+
+

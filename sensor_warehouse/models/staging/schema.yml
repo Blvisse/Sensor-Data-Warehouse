@@ -1,0 +1,31 @@
+version: 2 
+
+models: 
+  - name: stg_station
+    columns: 
+
+      - name: ID
+        description: Unique sensor identifier
+        tests:
+
+          - not_null
+  - name: stg_summary
+
+    columns: 
+
+      - name: ID 
+        description: Unique sensor identifier
+        tests: 
+
+          - not_null 
+
+  - name: stg_80_median 
+
+    columns: 
+
+      - name: ID 
+        description: Unique sensor identifier
+        tests:
+
+          - not_null 
+  
