@@ -131,3 +131,4 @@ dmypy.json
 #ignore the huge data store 
 /data
 /sensor_warehouse/data
+/airflow/logs/scheduler

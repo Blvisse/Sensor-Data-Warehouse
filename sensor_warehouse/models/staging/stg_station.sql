@@ -1,6 +1,6 @@
 with source as (
 
-    select * from {{ ref('I80_stations')}}
+    select TOP (10000) from {{ ref('stations_dataset')}}
 
 
 ),

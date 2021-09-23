@@ -1,5 +1,5 @@
 with source as (
-    select * from {{ ref('station_summary') }}
+    select * from {{ ref('summary_dataset') }}
 ),
 
 stage_summary as
