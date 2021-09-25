@@ -1,6 +1,6 @@
 with source as (
 
-    select * from {{ ref('I80_median')}} 
+    select * from {{ ref('median_dataset')}} 
 ),
 
 stage_median as (
