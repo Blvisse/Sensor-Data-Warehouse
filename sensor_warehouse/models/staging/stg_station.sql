@@ -1,3 +1,4 @@
+{{ config(materialized='view') }}
 with source as (
 
     select TOP (10000) from {{ ref('stations_dataset')}}
